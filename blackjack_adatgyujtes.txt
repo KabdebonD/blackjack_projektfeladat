@@ -1,0 +1,15 @@
+dia cím: Szabájok
+	 
+	1.lapok
+	    számozott kártyák 2-10ig
+	    szimbólumos kártyák: Király, Dáma, Bubi, Ász
+				   ^	   ^	 ^    ^
+				ezeknek az értéke: 10 |
+						      |
+				lehet 1 és 11 is, a kártyáid összegétől függ hogy menyi lesz az értéke,
+				ha a kártyáid összege a 11 es ásszal meghaladná a 21-et akkor 1 lesz az értéke
+	2. a játék menete
+		A játékot legalább két játékos játssza, amelyből az egyik az osztó. Több játékos esetén a játékosok csak az osztó ellen játszanak, egymás ellen nem. Kaszinókban a bank az osztó.
+	3.Tét
+	  A játékot meghatározott tétre játsszák. A játékosnak az osztás előtt meg kell tenni a tétet.	
+	  Ha a játékos nyer, akkor a megtett tétet speciális esetek kivételével 2:1 arányban kapja vissza.
