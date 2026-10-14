@@ -1,4 +1,3 @@
-
 #--FŐ ADATOK--
 import random
 bubi=10
@@ -6,16 +5,26 @@ dama=10
 kiraly=10
 asz = 10
 kartyak = [2,3,4,5,6,7,8,9,10,bubi,dama,kiraly,asz]
-szinek = ["♥","♦","♦","♣"]
+szinek = ["♥","♠","♦","♣"]
 alapzseton = 100
-
+sajat_pakli=[]
+sajat_pakli_szine=[]
 #--SZÁMOLÁSOK--
 
-def Kartya(kartyak,szinek):
-    erteke = random.choice(kartyak)
-    szine = random.choice(szinek)
-    tejes_kartya = (str(erteke,szine))
-    
+def kiir(sajat_pakli_szine,sajat_pakli):
+    for i in range(6):
+        if i ==1:
+            print(f"|{sajat_pakli[a]}   |")
+        elif i ==4:
+            print(f"|   {sajat_pakli[a]}|")
+        elif i==3:
+            print(f"|  {sajat_pakli_szine[a]}  |") 
+        elif i==0 or i==5:
+            print("+-----+")
+        
+        
+#print(kiir(sajat_pakli_szine,sajat_pakli))
+   
 jatek = (input(f'akarsz jatcani? (+igen minden más nem) '))
 if jatek == "+":
     print("a jatek elkezdodott")
@@ -24,12 +33,16 @@ if jatek == "+":
         while TET > alapzseton:
             print("nincs ellég pénz")
             TET= int(input("Tedd meg a Tétedet: " ))
-        PAKLI = []
+        
         ERTEK=0   
-        for i in range(2):
-            print(Kartya(kartyak,szinek).tejes_kartya)
-            ERTEK = ERTEK+Kartya(kartyak,szinek).erteke
-            PAKLI.append(Kartya.tejes_kartya)
+        for a in range(2):
+            sajat_pakli.append(random.choice(kartyak))
+            sajat_pakli_szine.append(random.choice(szinek))
+            print(kiir(sajat_pakli_szine,sajat_pakli))
+            ERTEK = ERTEK+sajat_pakli[a]
+            print(f"Kártyáid értéke: {ERTEK}")
+            
+        print(sajat_pakli,sajat_pakli_szine)
         if ERTEK == 21:
             print("nyertel")
             break
@@ -37,9 +50,10 @@ if jatek == "+":
             huzolmegfel = (input(f"Szeretnél még húzni fel kártyát?(+igen minden más nem) "))
             if huzolmegfel =="+":
                 while huzolmegfel=="+":
-                    print(f"{Kartya(kartyak,szinek).tejes_kartya}")
-                    ERTEK = ERTEK+Kartya(kartyak,szinek).erteke
-                    PAKLI.append(Kartya(kartyak,szinek).tejes_kartya)
+                    sajat_pakli.append(random.choice(kartyak))
+                    sajat_pakli_szine.append(random.choice(szinek))
+                    print(kiir(sajat_pakli_szine,sajat_pakli))
+                    ERTEK = ERTEK+sajat_pakli
                     if ERTEK > 21:
                         print("vesztettél")
                         break
