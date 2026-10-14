@@ -9,6 +9,8 @@ szinek = ["♥","♠","♦","♣"]
 alapzseton = 100
 sajat_pakli=[]
 sajat_pakli_szine=[]
+oszto_pakli=[]
+oszto_pakli_szine=[]
 #--SZÁMOLÁSOK--
 
 def kiir(sajat_pakli_szine,sajat_pakli):
@@ -38,7 +40,7 @@ if jatek == "+":
         for a in range(2):
             sajat_pakli.append(random.choice(kartyak))
             sajat_pakli_szine.append(random.choice(szinek))
-            print(kiir(sajat_pakli_szine,sajat_pakli))
+            print(kiir(sajat_pakli_szine,sajat_pakli),end=" ")
             ERTEK = ERTEK+sajat_pakli[a]
             print(f"Kártyáid értéke: {ERTEK}")
             
@@ -49,16 +51,21 @@ if jatek == "+":
         else:
             huzolmegfel = (input(f"Szeretnél még húzni fel kártyát?(+igen minden más nem) "))
             if huzolmegfel =="+":
+                a=2
                 while huzolmegfel=="+":
+                    
                     sajat_pakli.append(random.choice(kartyak))
                     sajat_pakli_szine.append(random.choice(szinek))
                     print(kiir(sajat_pakli_szine,sajat_pakli))
-                    ERTEK = ERTEK+sajat_pakli
+                    ERTEK = ERTEK+sajat_pakli[a]
+                    a+=1
                     if ERTEK > 21:
                         print("vesztettél")
                         break
                     elif ERTEK == 21:
                         print("nyertel")
                         break        
-                    
+                    huzolmegfel = (input(f"Szeretnél még húzni fel kártyát?(+igen minden más nem) "))
+            #osztóó
+            
         jatek = (input(f'akarsz ujj játékot kezdeni? (+igen minden más nem) '))
