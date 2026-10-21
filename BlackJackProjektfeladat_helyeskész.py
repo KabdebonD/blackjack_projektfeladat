@@ -122,8 +122,15 @@ if jatek == "+":
         elif bekert=='d':
             if megmaradtzseton-TET>=0:
                 megmaradtzseton-=TET
-                
                 TET = TET*2
+                kartyalen=random.randrange(len(kartyak))
+                kartya = Kartya(kartyak[kartyalen],random.choice(szinek),kiiros_kartyak[kartyalen])
+                sajat_pakli.append(kartya)
+                kartya.kiir()
+                ERTEK=0
+                for k in sajat_pakli:
+                    ERTEK = ERTEK+k.erteke
+                print(f"Kártyáid értéke: {ERTEK}")
             else:
                 print('Szegénység van, nincs elég zsetonod!')
         print("Az osztó kártyái: ")
