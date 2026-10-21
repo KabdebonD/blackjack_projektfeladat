@@ -72,8 +72,11 @@ if jatek == "+":
         oszto_pakli=[]
         print(f"Jelenlegi zsetonjaid: {alapzseton:.0f}")
         TET= int(input("Tedd meg a tétedet: "))
-        while TET > alapzseton:
-            print("Nincs elég zsetonod. Le vagy égve, még nem jött fizu.")
+        while TET > alapzseton or TET<0:
+            if TET>alapzseton:    
+                print("Nincs elég zsetonod. Le vagy égve, még nem jött fizu.")
+            elif TET<0:
+                print('A téted nem lehet kisebb mint nulla!')
             TET= int(input("Tedd meg a tétedet: " ))
         megmaradtzseton=alapzseton-TET
         print(f'Megmaradt zsetonjaid: {megmaradtzseton}')
@@ -100,7 +103,7 @@ if jatek == "+":
         print(f"+-----+\n|\\   /|\n|  X  |\n|/   \\|\n+-----+")
         for k in oszto_pakli:
             OSZTOERTEK = OSZTOERTEK+k.erteke
-        bekert=input('Válassz: HIT(h) / DOUBLE(d) / STAND(enter) ')
+        bekert=input('Válassz: HIT (h) / DOUBLE (d) / STAND(minden más) ')
         if bekert == 'h':       
                 while bekert=="h":
                     kartyalen=random.randrange(len(kartyak))
